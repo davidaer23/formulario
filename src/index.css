@@ -11,3 +11,66 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
 }
+
+form{
+  background-color: rgb(238, 238, 238);
+  border-color: rgb(184, 184, 184);
+  padding: 10px 30px;
+  width: 35%;
+  margin: 10px;
+  border-radius: 10px;
+  -webkit-border-radius: 10px;
+  -moz-border-radius: 10px;
+  -ms-border-radius: 10px;
+  -o-border-radius: 10px;
+}
+.title{
+text-align: center;
+font-size: larger;
+font-weight: bolder;
+padding-bottom: 20px;
+}
+.container-div{
+  padding: 5px;
+  width: 100%;
+  display: flex;
+  margin: 15px 0;
+}
+
+.label{
+  width: 50%;
+  margin-right: 5px;
+}
+.input{
+  width: 100%;
+}
+
+.input > input{
+  padding: 5px;
+  border: 1px solid rgb(201, 201, 201);
+  width: 90%;
+  border-radius: 3px;
+  -webkit-border-radius: 3px;
+  -moz-border-radius: 3px;
+  -ms-border-radius: 3px;
+  -o-border-radius: 3px;
+}
+
+.btn-submit{
+  margin: 20px 0;
+      border: none;
+      padding: 10px 10px;
+      color: white;
+      background-color: rgb(26, 148, 148);
+      border-radius: 4px;
+      -webkit-border-radius: 4px;
+      -moz-border-radius: 4px;
+      -ms-border-radius: 4px;
+      -o-border-radius: 4px;
+}
+
+
+.notification{
+  font-size: x-small;
+  color: rgb(231, 31, 31);
+}

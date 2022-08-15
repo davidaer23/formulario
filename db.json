@@ -1,0 +1,52 @@
+{
+  "users": [
+    {
+      "id": 1,
+      "username": "david1023",
+      "email": "david@hotmail.com",
+      "password": "123.Abc"
+    },
+    {
+      "username": "david",
+      "email": "davidandres102@hotmail.com",
+      "password": "12345678",
+      "id": 2
+    },
+    {
+      "username": "andres",
+      "email": "davidandres102@asa.ec",
+      "password": "12345678",
+      "id": 3
+    },
+    {
+      "username": "DAER",
+      "email": "davidandres102@hotmail.com",
+      "password": "12345678",
+      "id": 4
+    },
+    {
+      "username": "Luis",
+      "email": "davidandres102@hotmail.com",
+      "password": "12345678",
+      "id": 5
+    },
+    {
+      "username": "samanta",
+      "email": "davidandres102@hotmail.com",
+      "password": "12345678",
+      "id": 6
+    },
+    {
+      "username": "rio",
+      "email": "davidandres102@hotmail.com",
+      "password": "12345678",
+      "id": 7
+    },
+    {
+      "username": "Luis",
+      "email": "davidandres102@hotmail.com",
+      "password": "12345678",
+      "id": 8
+    }
+  ]
+}
