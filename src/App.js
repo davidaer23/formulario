@@ -23,20 +23,18 @@ const [password, setPassword] = useState('')
 const [newPassword, setNewPassword] = useState('')
 const [message, setMessage ] = useState(null)
 const [messageCP, setMessageCP ] = useState(null)
+const [messageEmail, setMessageEmail ] = useState(null)
 
 //Add User
 
 const addUser = (event) =>{
-  var validEmail =  /^\w+([.-_+]?\w+)*@\w+([.-]?\w+)*(\.\w{2,10})+$/
   event.preventDefault()
-if(password.length<8){
-  alert('Password must be at least 8 characters')
-}else if(password!==newPassword){
-  alert('Passwords are not the same')
-}else if(!validEmail.test(email) ) 
-{
-  alert('The email is invalid')
-} else{
+
+  if(messageCP || messageEmail){ //El password y el email puede enviarse sin importar el mensaje entonces por eso esta validacion
+    window.alert("Los datos son erroneos")
+    return
+  }
+
   const newUser = 
     {
       username:userName,
@@ -53,7 +51,7 @@ if(password.length<8){
   setEmail('')
   setPassword('')
   setNewPassword('')
-}
+
   
   
 }
@@ -61,8 +59,18 @@ if(password.length<8){
 // Handle Functions
 const handleUserName = (event) => setUsername(event.target.value.replace(/ /g, "")) 
 
-const handleEmail = (event) => setEmail(event.target.value.replace(/ /g, "")) 
+const handleEmail = (event) =>{
+  setEmail(event.target.value.replace(/ /g, "")) 
+} 
+ 
+const validarEmail = (event) =>{
+  const validEmail =  /^\w+([.-_+]?\w+)*@\w+([.-]?\w+)*(\.\w{2,10})+$/
+  !validEmail.test(event.target.value) ? setMessageEmail('Email invalido') : setMessageEmail(null)
+  if(event.target.value===''){
+    setMessageEmail(null)
+  }
   
+}
 
 
 const handlePassword = (event) => {
@@ -96,7 +104,8 @@ const handlePassword = (event) => {
           <label>Email: </label> 
           </div>
           <div className='input'>
-          <input value={email} onChange={handleEmail} required type={'email'} />
+          <input value={email} onChange={handleEmail} onBlur={validarEmail} required type={'email'} />
+          <Notification text={messageEmail} key={0}/>
           </div>
         </div>
         
@@ -105,7 +114,7 @@ const handlePassword = (event) => {
           <label>Password: </label>
           </div>
           <div className='input'>
-          <input value={password} onChange={handlePassword} required type={'password'}/>
+          <input value={password} minLength="8" onChange={handlePassword} required type={'password'}/>
           <Notification text={message} key={1}/>
           </div>
         </div>
@@ -115,7 +124,7 @@ const handlePassword = (event) => {
           <label>Confirm Password: </label>
           </div>
           <div className='input'>
-          <input value={newPassword} onChange={handleConfirmPassword} required type={'password'}/>
+          <input value={newPassword} minLength="8" onChange={handleConfirmPassword} required type={'password'}/>
           <Notification text={messageCP} key={2}/>
           </div>
         </div>
